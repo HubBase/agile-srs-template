@@ -1,17 +1,24 @@
 # Project
 
 ## Overview
-This purpose of this project is to setup an ecommerce store on Shopify with a public facing website to be hosted on HubSpot CMS. As needed an integration between the client's warehouse and Shopify store will need to be developed.
+The purpose of this project is to setup an ecommerce store and a public facing website. If needed an integration between client's warehouse and online store will be developed as well, that will synchronize inventory.
 
-## System Components
-### Ecommerce
-Ecommerce is the primary component of the system. Ecommerce will be implemented using a Shopify store. Shopify is a cloud based ecommerce service where store owners can sell their products online. 
+## System
+
+The components of the system are e-commerce, website, and inventory management.
+
+![System Dataflow](ecommerce.png)
+
+### E-commerce
+Ecommerce is the primary component of the system. 
+
 
 #### Functional Requirements
 - Store should have an admin dashboard where store onwer can manage products & their categories/collections, customers, and products.
 - Store owner should be able to add product inventory manually. The inventory should automatically sync between the store and the warehouse.
-- Customers should be able to browse products on the online store, filter them by category, and filter them based on other filtering options Shopify offers out of the box.
-- Store owner should be able to withdraw earnings using one of the supported Shopify withdrawing channels.
+- Customers should be able to browse products on the online store, filter them by category, and filter them based on other filtering options available.
+- Store owner should be able to withdraw earnings.
+- Products will be imported every night at 12:00 am.
 
 
 
@@ -21,4 +28,49 @@ Ecommerce is the primary component of the system. Ecommerce will be implemented 
 - Store should have a 99.99% uptime.
 
 
-![Store dataflow](ecommerce.png)
+
+#### Tecnical Details
+The online store will be setup on Shopify, which is a cloud base e-commerce solution. Add more technical details here.
+
+
+### Website
+
+
+#### Functional Requirements
+- Website should follow client brand guidelines.
+- Website should connect with Shopify store.
+
+
+
+#### Non-functional Requirements
+- Website should be secure.
+- Website should be scalable.
+- Website should have a 99.99% uptime.
+
+
+
+#### Tecnical Details
+The website will be hosted on HubSpot CMS, which is a cloud base CMS. Add more technical details here.
+
+
+
+### Inventory Management
+The inventory on ecommerce store should sync warehouse.
+
+#### Functional Requirements
+- At a given time the product inventory in online store should be reflect what is available in the warehouse.
+- Store owner should be able to manually change inventory on the online store.
+
+
+#### Non-functional Requirements
+- Inventory management should be secure and reliable.
+
+
+#### Tecnical Details
+A microservice will be developed that will integrate Shopify with warehouse software for inventory synchronization. 
+
+- The microservice will be hosted on Amazon AWS lambda.
+- The communication between microservice, warehouse, and Shopify store will be secured using API keys which will autorotate.
+- The microservice will power a private Shopify app.
+
+
