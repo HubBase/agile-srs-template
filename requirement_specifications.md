@@ -9,7 +9,7 @@ The components of the system are e-commerce, website, and inventory management.
 
 ![System Dataflow](ecommerce.png)
 
-### E-commerce
+## E-commerce
 Ecommerce is the primary component of the system. 
 
 
@@ -33,7 +33,7 @@ Ecommerce is the primary component of the system.
 The online store will be setup on Shopify, which is a cloud base e-commerce solution. Add more technical details here.
 
 
-### Website
+## Website
 
 
 #### Functional Requirements
@@ -54,7 +54,7 @@ The website will be hosted on HubSpot CMS, which is a cloud base CMS. Add more t
 
 
 
-### Inventory Management
+## Inventory Management
 The inventory on ecommerce store should sync warehouse.
 
 #### Functional Requirements
